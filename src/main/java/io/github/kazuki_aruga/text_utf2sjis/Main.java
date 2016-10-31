@@ -47,7 +47,11 @@ public class Main {
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(infile), "UTF-8"));
 				PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(outfile), "MS932"))) {
 
-			for (String line = null; (line = reader.readLine()) != null;) {
+			String line = null;
+			int numLine = 0;
+			while ((line = reader.readLine()) != null) {
+
+				numLine++;
 
 				line = line.replaceAll("−", "-").replaceAll("〜", "～");
 
@@ -57,7 +61,7 @@ public class Main {
 
 				} else {
 
-					System.out.println("変換できない文字が含まれています : " + line);
+					System.out.println("変換できない文字が含まれています(" + numLine + "行目) : " + line);
 				}
 			}
 		}
