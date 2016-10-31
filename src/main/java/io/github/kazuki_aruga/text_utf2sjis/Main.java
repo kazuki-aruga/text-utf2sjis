@@ -49,7 +49,7 @@ public class Main {
 
 			for (String line = null; (line = reader.readLine()) != null;) {
 
-				line = line.replaceAll("−", "-");
+				line = line.replaceAll("−", "-").replaceAll("〜", "～");
 
 				if (ce.canEncode(line)) {
 
