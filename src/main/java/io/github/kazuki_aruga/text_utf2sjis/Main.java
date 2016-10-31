@@ -54,6 +54,10 @@ public class Main {
 				if (ce.canEncode(line)) {
 
 					writer.println(line);
+
+				} else {
+
+					System.out.println("変換できない文字が含まれています : " + line);
 				}
 			}
 		}
